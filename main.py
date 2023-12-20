@@ -7,7 +7,7 @@ import gzip
 from pathlib import Path
 
 
-from functions import normalize, sort_Balagan_dir, unpack_archive_files
+from functions import normalize, sort_dir, unpack_archive_files
 
 
 path = sys.argv[1]
@@ -15,7 +15,7 @@ path = sys.argv[1]
 if __name__ == "__main__":
 
     normalize(path)
-    sort_Balagan_dir(path)
+    sort_dir(path)
     unpack_archive_files(path)
 
     

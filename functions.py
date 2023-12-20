@@ -6,15 +6,15 @@ import tarfile
 import gzip
 
 
-def sort_Balagan_dir(path):
+def sort_dir(path):
     list_music = []
     list_movie = []
     list_documents = []
     list_archives = []
     list_pictures = []
     list_others = []
-    Known = []
-    Unknown = []
+    known = []
+    unknown = []
     doc = path+r'\documents'
     music = path+r'\audio'
     movie = path+r'\video'
@@ -27,32 +27,32 @@ def sort_Balagan_dir(path):
             start = (item.split('.')[0])
             if end in ['doc', 'docx', 'txt', 'pdf', 'xlsx', 'pptx']:
                 list_documents.append(item)
-                Known.append(end)
+                known.append(end)
                 # przenosi pliki dokumentowe do folderu documents
                 shutil.move(item_path, doc)
             elif end in ['avi', 'mp4', 'mov', 'mkv']:
                 list_movie.append(item)
-                Known.append(end)
+                known.append(end)
                 # przenosi pliki muzyczne do folderu video
                 shutil.move(item_path, movie)
             elif end in ['jpeg', 'jpg', 'svg', 'png']:
                 list_pictures.append(item)
-                Known.append(end)
+                known.append(end)
                 # przenosi pliki obrakowe do folderu images
                 shutil.move(item_path, picture)
             elif end in ['mp3', 'ogg', 'wav', 'amr']:
                 list_music.append(item)
-                Known.append(end)
+                known.append(end)
                 # przenosi pliki muzyczne do folderu audio
                 shutil.move(item_path, music)
             elif end in ['zip', 'gz', 'tar']:
                 list_archives.append(item)
-                Known.append(end)
+                known.append(end)
                 # przenosi pliki muzyczne do folderu archive
                 shutil.move(item_path, archive)
             else:
                 list_others.append(item)
-                Unknown.append(end)
+                unknown.append(end)
         elif os.path.isdir(item_path):
             if item in ['archives', 'audio', 'documents', 'images', 'video']:
                 continue
@@ -66,40 +66,40 @@ def sort_Balagan_dir(path):
                             start = (ele.split('.')[0])
                             if end in ['doc', 'docx', 'txt', 'pdf', 'xlsx', 'pptx']:
                                 list_documents.append(ele)
-                                Known.append(end)
+                                known.append(end)
                                 # przenosi pliki dokumentowe do folderu documents
                                 shutil.move(item_path_1, doc)
                             elif end in ['avi', 'mp4', 'mov', 'mkv']:
                                 list_movie.append(ele)
-                                Known.append(end)
+                                known.append(end)
                                 # przenosi pliki muzyczne do folderu video
                                 shutil.move(item_path_1, movie)
                             elif end in ['jpeg', 'jpg', 'svg', 'png']:
                                 list_pictures.append(ele)
-                                Known.append(end)
+                                known.append(end)
                                 # przenosi pliki obrakowe do folderu images
                                 shutil.move(item_path_1, picture)
                             elif end in ['mp3', 'ogg', 'wav', 'amr']:
                                 list_music.append(ele)
-                                Known.append(end)
+                                known.append(end)
                                 # przenosi pliki muzyczne do folderu audio
                                 shutil.move(item_path_1, music)
                             elif end in ['zip', 'gz', 'tar']:
                                 print(f'ele_plikuw folderze: {ele}')
                                 list_archives.append(ele)
-                                Known.append(end)
+                                known.append(end)
                                 # przenosi pliki muzyczne do folderu archives
                                 shutil.move(item_path_1, archive)
                             else:
                                 list_others.append(ele)
-                                Unknown.append(end)
+                                unknown.append(end)
                             os.rmdir(item_path)
                 else:
                     os.rmdir(item_path)
-    SETZ = set(Known)
-    SETNZ = set(Unknown)
+    SETZ = set(known)
+    SETNZ = set(unknown)
     print(f'SET Known: {SETZ}')
-    print(f'SET Unknown: {SETNZ}')
+    print(f'SET unknown: {SETNZ}')
     print(f'Music files list:{list_music}')
     print(f'Movie files list: {list_movie}')
     print(f'Documents files list: {list_documents}')
