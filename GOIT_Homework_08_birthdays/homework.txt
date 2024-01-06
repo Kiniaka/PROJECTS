@@ -1,0 +1,23 @@
+ZADANIE DOMOWE TREŚĆ:
+
+
+Musisz zaimplementować użyteczną funkcję, umożliwiającą wyświetlenie listy współpracowników,
+którym należy złożyć życzenia z okazji ich urodzin w tym tygodniu.
+
+Masz listę słowników users, każdy słownik zawiera klucze name i birthday.
+Jest to struktura reprezentująca model listy użytkowników z ich imionami i datami urodzin.
+name jest ciągiem znaków z imieniem użytkownika,
+a birthday jest obiektem datetime z datą urodzin.
+
+Twoim zadaniem jest napisanie funkcji get_birthdays_per_week, która pobiera listę users jako dane wejściowe i wyświetla na konsoli listę użytkowników (używając funkcji print), którym należy złożyć życzenia według dnia.
+
+____________Warunki akceptacji___________
+
+1. get_birthdays_per_week wyświetla osoby obchodzące urodziny w formacie:
+    - Monday: Bill, Jill
+    - Friday: Kim, Jan
+
+2. Użytkownicy, których urodziny wypadły w weekend, powinni dostać życzenia w poniedziałek,
+3. Dla celów debugowania, wygodnie jest utworzyć testową listę users i wypełnić ją samodzielnie.
+4. Funkcja wyświetla użytkowników obchodzących urodziny tydzień przed bieżącym dniem.
+5. Tydzień zaczyna się w poniedziałek.
