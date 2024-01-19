@@ -1,12 +1,39 @@
-from pathlib import Path
-import os
 import shutil
-from zipfile import ZipFile
+import zipfile
 import tarfile
+import sys
+import os
 import gzip
-
+from pathlib import Path
 
 def sort_dir(path):
+    polish_to_english = {
+        'ą': 'a', 'ć': 'c', 'ę': 'e', 'ł': 'l', 'ń': 'n',
+        'ó': 'o', 'ś': 's', 'ź': 'z', 'ż': 'z',
+        'Ą': 'A', 'Ć': 'C', 'Ę': 'E', 'Ł': 'L', 'Ń': 'N',
+        'Ó': 'O', 'Ś': 'S', 'Ź': 'Z', 'Ż': 'Z'
+    }
+    for item in os.listdir(path):
+        if item in ['archives', 'audio', 'documents', 'images', 'video']:
+            continue
+        else:
+            item_path = os.path.join(path, item)
+            if os.path.isdir(item_path):
+                folder_name = item
+                new_name = folder_name.strip().replace(
+                    " ", "").replace("-", "_").replace("!", "_")
+                for polish, english in polish_to_english.items():
+                    new_name = new_name.replace(polish, english)
+                os.rename(path+'\\'+folder_name, path+'\\'+new_name)
+            elif os.path.isfile(item_path):
+                end = (item.split('.')[-1])
+                start = (item.split('.')[0])
+                file_name = start
+                new_name = file_name.strip().replace(" ", "").replace("-", "_")
+                for polish, english in polish_to_english.items():
+                    new_name = new_name.replace(polish, english)
+                os.rename(path+'\\'+file_name+"."+end,
+                          path+'\\'+new_name+"."+end)
     list_music = []
     list_movie = []
     list_documents = []
@@ -98,18 +125,6 @@ def sort_dir(path):
                     os.rmdir(item_path)
     SETZ = set(known)
     SETNZ = set(unknown)
-    print(f'SET Known: {SETZ}')
-    print(f'SET unknown: {SETNZ}')
-    print(f'Music files list:{list_music}')
-    print(f'Movie files list: {list_movie}')
-    print(f'Documents files list: {list_documents}')
-    print(f'Archived files list: {list_archives}')
-    print(f'Pictures fies list: {list_pictures}')
-    print(f'Others files list: {list_others}')
-    return SETZ, SETNZ, list_music, list_movie, list_documents, list_archives, list_pictures, list_others
-
-
-def unpack_archive_files(path):
     archive = path+r'\archives'
     for item in os.listdir(archive):
         item_path = os.path.join(archive, item)
@@ -126,35 +141,21 @@ def unpack_archive_files(path):
             file = tarfile.open(str(item_path))
             file.extractall(gzfolder)
             file.close()
-    return
+    print(f'SET Known: {SETZ}')
+    print(f'SET unknown: {SETNZ}')
+    print(f'Music files list:{list_music}')
+    print(f'Movie files list: {list_movie}')
+    print(f'Documents files list: {list_documents}')
+    print(f'Archived files list: {list_archives}')
+    print(f'Pictures fies list: {list_pictures}')
+    print(f'Others files list: {list_others}')
+    return SETZ, SETNZ, list_music, list_movie, list_documents, list_archives, list_pictures, list_others
 
 
-def normalize(path):
-    polish_to_english = {
-        'ą': 'a', 'ć': 'c', 'ę': 'e', 'ł': 'l', 'ń': 'n',
-        'ó': 'o', 'ś': 's', 'ź': 'z', 'ż': 'z',
-        'Ą': 'A', 'Ć': 'C', 'Ę': 'E', 'Ł': 'L', 'Ń': 'N',
-        'Ó': 'O', 'Ś': 'S', 'Ź': 'Z', 'Ż': 'Z'
-    }
-    for item in os.listdir(path):
-        if item in ['archives', 'audio', 'documents', 'images', 'video']:
-            continue
-        else:
-            item_path = os.path.join(path, item)
-            if os.path.isdir(item_path):
-                folder_name = item
-                new_name = folder_name.strip().replace(
-                    " ", "").replace("-", "_").replace("!", "_")
-                for polish, english in polish_to_english.items():
-                    new_name = new_name.replace(polish, english)
-                os.rename(path+'\\'+folder_name, path+'\\'+new_name)
-            elif os.path.isfile(item_path):
-                end = (item.split('.')[-1])
-                start = (item.split('.')[0])
-                file_name = start
-                new_name = file_name.strip().replace(" ", "").replace("-", "_")
-                for polish, english in polish_to_english.items():
-                    new_name = new_name.replace(polish, english)
-                os.rename(path+'\\'+file_name+"."+end,
-                          path+'\\'+new_name+"."+end)
-    return
+ 
+def main():
+    sort_dir(path) 
+    
+if __name__ == '__ main __':
+    path = sys.argv[1]
+    main()
