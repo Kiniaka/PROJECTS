@@ -6,6 +6,9 @@ import os
 import gzip
 from pathlib import Path
 
+path = sys.argv[1]
+
+
 def sort_dir(path):
     polish_to_english = {
         'ą': 'a', 'ć': 'c', 'ę': 'e', 'ł': 'l', 'ń': 'n',
@@ -135,7 +138,7 @@ def sort_dir(path):
             shutil.unpack_archive(item_path, dest)
         elif end == 'tar':
             new = archive+"//"+name
-            shutil.unpack_archive(item_path, new, filter='data')
+            shutil.unpack_archive(item_path, new)
         elif end == 'gz':
             gzfolder = archive+"\\"+name
             file = tarfile.open(str(item_path))
@@ -152,10 +155,8 @@ def sort_dir(path):
     return SETZ, SETNZ, list_music, list_movie, list_documents, list_archives, list_pictures, list_others
 
 
- 
 def main():
-    sort_dir(path) 
-    
-if __name__ == '__ main __':
-    path = sys.argv[1]
-    main()
+    sort_dir(path)
+
+
+main()
