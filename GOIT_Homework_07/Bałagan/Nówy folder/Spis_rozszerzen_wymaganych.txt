@@ -1,7 +1,0 @@
-Wykaz rozszerzeń plików
-obrazy ('JPEG', 'PNG', 'JPG', 'SVG');
-pliki wideo ('AVI', 'MP4', 'MOV', 'MKV');
-dokumenty ('DOC', 'DOCX', 'TXT', 'PDF', 'XLSX', 'PPTX');
-muzyka ('MP3', 'OGG', 'WAV', 'AMR');
-archiwa ('ZIP', 'GZ', 'TAR');
-nieznane rozszerzenia. - dla mnie to 'WIM'
