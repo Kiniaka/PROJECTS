@@ -41,12 +41,11 @@ class AddressBook(UserDict):
         lista = []
         lista = [item['phone'] for item in Record.data if (
             (show in item.get('name')) or (show in item.get('phone')))]
-        if lista == []:
-            print('The conctact has not been found.')
+        if Record.data == [] and lista == []:
+            end_text = print("The contact list is empty.")
         else:
-            print(f' Phone to {show} : {lista}')
-        if Record.data == []:
-            raise MyException("The contact list is empty.")
+            end_text = print(f' Phone to {show} : {lista}')
+        return end_text
 
     def find_contact_by_letter_or_digit(self):
         contact_date = str(
@@ -149,7 +148,6 @@ class Record:
             Record.wrong_contact(contact)
             Record.add_record(self)
         end_text = print(f'I added contact {contact[0]}')
-        # print(Record.data)
         return end_text
 
     def change_phone_number(self):
@@ -315,6 +313,7 @@ def main(func):
                 ask = decition_map[ask](ask)
                 ask = str(input("Enter the command:"))
         else:
+            print('Wrong command. Please try again.')
             ask = str(input("Enter the command:"))
             continue
     return
