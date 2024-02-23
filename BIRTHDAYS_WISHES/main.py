@@ -53,5 +53,7 @@ if __name__ == "__main__":
         {"name": "Aleksandra", "birthday": (
             (datetime.strptime('28 February 2024', '%d %B %Y')).date())},
         {"name": "Antoni", "birthday": (
-            (datetime.strptime('29 February 2024', '%d %B %Y')).date())}
+            (datetime.strptime('29 February 2024', '%d %B %Y')).date())},
+        {"name": "Krzysztof", "birthday": (
+            (datetime.strptime('01 March 2024', '%d %B %Y')).date())}
     ])

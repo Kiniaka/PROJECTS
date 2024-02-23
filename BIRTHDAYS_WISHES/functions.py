@@ -16,7 +16,7 @@ def get_birthdays_per_week(users):
         week_day = item["birthday"].strftime('%A')
         difference = birthday_day - now
         difference = int(str(difference.days))
-        if 0 <= (difference) <= 7:
+        if 0 < (difference) <= 8:
             if week_day == "Saturday" or week_day == "Sunday" or week_day == "Monday":
                 monday_greeting_list.append(item["name"])
             elif week_day == "Tuesday":
@@ -28,11 +28,10 @@ def get_birthdays_per_week(users):
             elif week_day == "Friday":
                 friday_greeting_list.append(item["name"])
 
-    print(f'Monday: {monday_greeting_list[0]}, {
-          monday_greeting_list[1]}, {monday_greeting_list[2]}')
+    print(f'Monday: {monday_greeting_list[0]}, {monday_greeting_list[1]}, {monday_greeting_list[2]}')
     print(f'Tuesday: {tuesday_greeting_list[0]}')
     print(f'Wednesday: {wednesday_greeting_list[0]}')
     print(f'Thursday: {thursday_greeting_list[0]}')
     print(f'Friday: {friday_greeting_list[0]}')
 
-    print(f' DZISIAJ JEST: {now} {week_day_now}')
+    # print(f' DZISIAJ JEST: {now} {week_day_now}')
