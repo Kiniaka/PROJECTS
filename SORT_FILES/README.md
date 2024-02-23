@@ -5,7 +5,7 @@ Script which sort files in the folder by selected file extension.
 To start :
 
 1. Open command line (cmd ).
-2. Write in teminal: cd SORT_FILES\clean_folder\clean_folder
+2. Write in teminal: cd PROJECTS\SORT_FILES\clean_folder
 3. Then write in terminal : pip install -e .
 4. Push the ENTER bottom.
 5. Write in terminal: clean_folder Path
