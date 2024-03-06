@@ -1,7 +1,7 @@
 _____________________________________________TO START_____________________________________________:
 
 1. Open command line (cmd ).
-2. Write in teminal: cd Bot---Syntax-Conquerors\Osobisty_asystent
+2. Write in teminal: cd PROJECTS\BOT_ASSISTAN_Group_project
 3. Confirm by ENTER button.
 4. Then write in terminal : pip install -e .
 5. Push the ENTER button.
