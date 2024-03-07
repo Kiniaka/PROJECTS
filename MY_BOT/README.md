@@ -1,9 +1,9 @@
 TO START:
 
 1. Open commend line
-2. Write in in commend line: cd BOTF
+2. Write in in commend line: cd MY_BOT
 3. Press "ENTER" button
-4. Write in commend line: python botf.py
+4. Write in commend line: python mybot.py
 5. Press "ENTER" button
 
 PROJECT DESCRIPTION:
