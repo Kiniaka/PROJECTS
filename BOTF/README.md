@@ -1,9 +1,9 @@
 TO START:
 
 1. Open commend line
-2. Write in in commend line: cd BOT
+2. Write in in commend line: cd BOTF
 3. Press "ENTER" button
-4. Write in commend line: python bot.py
+4. Write in commend line: python botf.py
 5. Press "ENTER" button
 
 PROJECT DESCRIPTION:
@@ -30,4 +30,6 @@ e. "FIND" - bot show the names and mobile phones of the contact after user write
 
 f. "SHOW ALL"- bot show all contacts which are saved in the contacts list.
 
-g. "GOOD BYE", "CLOSE", "EXIT" - bot terminate the work and shows: "Good bye!".
+g. "SAVE" =  bot creates new file called "Data_book.json" and saves all inputed by the user contacts in it.
+
+h. "GOOD BYE", "CLOSE", "EXIT" - bot terminate the work and shows: "Good bye!".
