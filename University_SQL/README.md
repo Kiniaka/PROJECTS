@@ -19,7 +19,7 @@ Aby połączenie z bazą danych było prawidłowe należy zamienić wartości w 
 
 ---
 
-secret_haslo - zamienić na prawidziwe hasło. W sktypcie ze wględu na ochronę danych zmieniona na 'secret_password'.
+secret_password - zamienić na prawidziwe hasło. W sktypcie ze wględu na ochronę danych zmieniona na 'secret_password'.
 
 db_parameters = {
 'dbname': 'postgres',

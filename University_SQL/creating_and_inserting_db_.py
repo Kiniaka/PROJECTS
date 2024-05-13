@@ -12,7 +12,7 @@ fake = Faker()
 db_parameters = {
     'dbname': 'postgres',
     'user': 'postgres',
-    'password': 'secretpassword',
+    'password': 'secret_password',
     'host': 'localhost',
     'port': 5432
 }
