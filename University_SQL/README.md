@@ -1,3 +1,11 @@
+TO START:
+
+1. Open commend line
+2. Write in in commend line: cd University_SQL
+3. Press "ENTER" button
+4. Write in commend line: python """creating*and_inserting_db*.py"""
+5. Press "ENTER" button
+
 Zapytania do bazy danych, które zwrócą następujące wyniki:
 
 1.  5 uczniów z najwyższą średnią ocen ze wszystkich przedmiotów.
