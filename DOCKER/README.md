@@ -7,8 +7,8 @@ TO START:
 3. Press "ENTER" button
 4. Write in commend line: cd mynewbot
 5. Press "ENTER" buttom
-6. Write in commend line: docker build . -t bot_f/docker_bot_f
-7. Write in commend line: docker run -it bot_f/docker_bot_f
+6. Write in commend line: docker build . -t bot/docker_bot
+7. Write in commend line: docker run -it bot/docker_bot
 
 ---
 
