@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700&subset=cyrillic");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", Arial, Helvetica, sans-serif;
+  background-color: #d0f1f6;
+}
+
+.mycolor {
+  background-color: #0dcaf0;
+}
+
+.nav_color {
+  color: floralwhite !important;
+}
+
+.container_background {
+  background-color: azure;
+}
+
+.buttom {
+  background-color: azure;
+  color: arial;
+}
+
+.letter {
+  color: 212529 !important;
+}
