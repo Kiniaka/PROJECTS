@@ -1,0 +1,34 @@
+{% block content %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+    <title>Quotes</title>
+  </head>
+  <body>
+    <a href="/"><button class="button">Back to Homepage</button></a>
+    {% if user.is_authenticated %}<a href="{% url 'add_tag' %}"
+      ><button class="button">Add quotation</button></a
+    >
+    {% endif %}
+    <h1 class="base">Quotations:</h1>
+    {% if allquotes|length == 0 %}
+    <p>The is no data about quotes !</p>
+    {% else %} {% for a in allquotes %}
+    <div class="quotetable">
+      <p>Quotes: {{a.quote_name}}</p>
+      <p> by
+        <button class="button_author">
+          <a href="/authors/{{a.author_name}}"> {{a.author_name}}</a>
+        </button>
+      </p>
+      <p>
+        Tags: {% for t in a.tags.all %}<small class="button_tags">{{t}}</small>
+        {% endfor %}
+      </p>
+    </div>
+    {% endfor %} {% endif %}
+  </body>
+  {% endblock %}
+</html>

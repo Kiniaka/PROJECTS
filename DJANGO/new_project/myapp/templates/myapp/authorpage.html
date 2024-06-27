@@ -1,0 +1,22 @@
+{% block content %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+    <title>Author description</title>
+  </head>
+  <body>
+    <a href="/"><button class="button">Homepage</button></a>
+    <a href="{% url 'authors'%}"
+      ><button class="button">Back to Authors</button></a
+    >
+    <br /><br />
+    {% for autor in author %} {% if autor.author_name == author_name %}
+    <p>Author: {{autor.author_name}}</p>
+    <p>Born: {{autor.date_of_birth}}, {{author.place_of_birth}}</p>
+    <p>Biography: {{autor.author_description}}</p>
+    {% endif %} {% endfor %}
+  </body>
+</html>
+{% endblock%}

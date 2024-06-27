@@ -1,0 +1,18 @@
+{% block content %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+    <title>Log in</title>
+  </head>
+  <body>
+    <a href="/"><button class="button">Back to Homepage</button></a>
+    <h1 class="login">Here you can login!</h1>
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %} {{form}}
+      <button type="submit">Login</button>
+    </form>
+  </body>
+  {% endblock %}
+</html>

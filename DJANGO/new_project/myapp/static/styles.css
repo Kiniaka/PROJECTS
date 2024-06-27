@@ -1,0 +1,73 @@
+body {
+  background-color: darkblue;
+}
+
+h1 {
+  color: goldenrod;
+}
+
+h2 {
+  color: goldenrod;
+}
+
+h3 {
+  color: goldenrod;
+}
+
+h4 {
+  color: goldenrod;
+}
+
+a {
+  color: goldenrod;
+  font-size: x-small;
+}
+footer {
+  color: goldenrod;
+  margin: 0 auto;
+  margin-top: 200px;
+  margin-bottom: 300px;
+  margin-left: 90px;
+  margin-right: 90px;
+}
+.container {
+  width: 500px;
+  margin: 0 auto;
+  margin-top: 100px;
+  margin-bottom: 290px;
+  margin-left: 500px;
+  margin-right: 90px;
+}
+
+.button {
+  color: goldenrod;
+  background-color: darkblue;
+  margin: auto;
+  border: auto solid #333333;
+  box-shadow: 2px 2px 3px #333333;
+}
+
+p {
+  color: goldenrod;
+}
+
+.button_tags {
+  color: goldenrod;
+  background-color: rgb(12, 25, 142);
+  padding: 2px 5px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 3px #333333;
+}
+
+.button_author {
+  color: goldenrod;
+  background-color: darkblue;
+}
+
+.quotetable {
+  padding: 10px;
+  margin-bottom: 30px;
+  border: 1px solid #333333;
+  border-radius: 5px;
+  box-shadow: 2px 2px 3px #333333;
+}

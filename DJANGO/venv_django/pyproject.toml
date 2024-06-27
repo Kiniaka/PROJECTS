@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "venv-django"
+version = "0.1.0"
+description = ""
+authors = ["Kiniaka <147816937+Kiniaka@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+psycopg2 = "^2.9.9"
+django = "^5.0.6"
+beautifulsoup4 = "^4.12.3"
+requests = "^2.32.3"
+lxml = "^5.2.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

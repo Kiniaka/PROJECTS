@@ -1,0 +1,58 @@
+{% block content %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+    <title>Homepage</title>
+  </head>
+  <body class="Homepage">
+    <div class="navi">
+      <nav>
+        {% if user.is_authenticated %}
+        <p>WELCOME, {{user.username}}</p>
+        <br />
+        <a href="{% url 'logout' %}"><button class="button">LOGOUT</button></a>
+        <a href="{% url 'scrape'%}"
+          ><button class="button">LOAD DATA</button></a
+        >
+        {% else %}
+        <a href="{% url 'login' %}"><button class="button">LOGIN</button></a>
+        <a href="http://localhost:8000/register/"
+          ><button class="button">Rejester here !</button></a
+        >
+        {% endif %}
+      </nav>
+    </div>
+    <div class="container">
+      <h1 class="navi">Welcome on my webside page!</h1>
+      <h3 class="login">If this is your first visit to the website:</h3>
+      <ul>
+        <li>
+          <h3 class="login">
+            You can see interesting quotations :
+            <a href="http://localhost:8000/quotations/"> HERE !</a>
+          </h3>
+        </li>
+        <li>
+          <h3 class="login">
+            You can see list of authors:<a
+              href="http://localhost:8000/authors/"
+            >
+              HERE !</a
+            >
+          </h3>
+        </li>
+        <li>
+          <h3 class="login">
+            To add some authors and quores you have to be login !
+          </h3>
+        </li>
+      </ul>
+    </div>
+    <div class="container">
+      <footer class="Homepage">I hope that you will enjoy here !</footer>
+    </div>
+  </body>
+  {% endblock %}
+</html>

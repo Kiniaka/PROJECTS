@@ -1,0 +1,16 @@
+{% block content %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+    <title>Add tag</title>
+  </head>
+  <body>
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %} {{tag_form}}
+      <button type="submit">Add</button>
+    </form>
+  </body>
+</html>
+{% endblock %}
